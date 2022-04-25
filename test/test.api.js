@@ -183,28 +183,27 @@ describe('The Garment API', function () {
 
 		// and below this line for this function will
 		const result = await supertest(app)
-				.get(`/api/garments/grouped`)
-				.expect(200);
+			.get(`/api/garments/grouped`)
+			.expect(200);
 
 		const garmentsGrouped = result.body;
 		// console.log(garmentsGrouped);
 
 		// write your code above this line
 		const expectedResult = [
-			
-			{
-				gender: 'Male',
-				count: '15'
-			},
 			{
 				gender: 'Female',
 				count: '16'
 			},
 			{
+				gender: 'Male',
+				count: '15'
+			},
+			{
 				gender: 'Unisex',
 				count: '4'
 			}
-			
+
 		]
 		assert.deepStrictEqual(expectedResult, garmentsGrouped.data)
 	});
