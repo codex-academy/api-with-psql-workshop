@@ -92,12 +92,23 @@ module.exports = function (app, db) {
 			})
 		}
 	});
-
 	app.get('/api/garments/grouped', async function (req, res) {
 		const result = await db.many(`select count(*), gender from garment group by gender ORDER BY gender  deSC`);
 		
 		res.json({
 			data: result
+		})
+	});
+
+
+	app.get('/api/garments/:price', async function (req, res) {
+
+		const { price } = req.params;
+		const results = await db.manyOrNone(`select * from garment where price <= $1`,[price])
+	
+
+		res.json({
+			data: results
 		})
 	});
 
