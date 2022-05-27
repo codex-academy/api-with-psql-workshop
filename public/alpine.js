@@ -41,8 +41,6 @@ document.addEventListener('alpine:init', () => {
 
 			addGarment() {
 				console.log(this.garmentList)
-				// console.log('/api/garment', this.garmentList);
-
 				try {
 					axios
 						.post('/api/garment', this.garmentList)

@@ -75,7 +75,6 @@ module.exports = function (app, db) {
 		try {
 
 			const { description, price, img, season, gender } = req.body;
-console.log('adding');
 			// insert a new garment in the database
 			 await db.none(`insert into garment( description, gender,price,img,season) values($1,$2,$3,$4,$5) on conflict do nothing`, [ description, gender,price,img,season]);
 		
