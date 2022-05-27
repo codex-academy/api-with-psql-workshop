@@ -8,8 +8,10 @@
 	<title>Missy Tee - clothing store</title>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-	<link rel="stylesheet" href="style.css">
+
 	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -29,34 +31,41 @@
 				</label>
 
 				<label>
-					<input @change="filterGarments()" x-model="genderFilter" type="radio" name="gender" value="Male"> Male
+					<input @change="filterGarments()" x-model="genderFilter" type="radio" name="gender" value="Male">
+					Male
 				</label>
 
 				<label>
-					<input @change="filterGarments()" x-model="genderFilter"  type="radio" name="gender" value="Female"> Female
+					<input @change="filterGarments()" x-model="genderFilter" type="radio" name="gender" value="Female">
+					Female
 				</label>
 				<label>
-					<input @change="filterGarments()" x-model="genderFilter"  type="radio" name="gender" value="Unisex"> Unisex
+					<input @change="filterGarments()" x-model="genderFilter" type="radio" name="gender" value="Unisex">
+					Unisex
 				</label>
 			</div>
 			<div class="seasons">
 
 				<label>
-					<input @change="filterGarments()" x-model="seasonFilter"  type="radio" name="season" value="All"> All
+					<input @change="filterGarments()" x-model="seasonFilter" type="radio" name="season" value="All"> All
 				</label>
 				<label>
-					<input @change="filterGarments()" x-model="seasonFilter"  type="radio" name="season" value="Summer"> Summer
+					<input @change="filterGarments()" x-model="seasonFilter" type="radio" name="season" value="Summer">
+					Summer
 				</label>
 				<label>
-					<input @change="filterGarments()" x-model="seasonFilter"  type="radio" name="season" value="Winter"> Winter
+					<input @change="filterGarments()" x-model="seasonFilter" type="radio" name="season" value="Winter">
+					Winter
 				</label>
 				<label>
-					<input @change="filterGarments()" x-model="seasonFilter"  type="radio" name="season" value="All Seasons"> All seasons
+					<input @change="filterGarments()" x-model="seasonFilter" type="radio" name="season"
+						value="All Seasons"> All seasons
 				</label>
 			</div>
 			<div>
 				Filter by price range:
-				<input @change="filterPrice()" x-model="maxPrice" type="range" name="priceRange" max="1000" step="50" class="priceRange" value="0">
+				<input @change="filterPrice()" x-model="maxPrice" type="range" name="priceRange" max="1000" step="50"
+					class="priceRange" value="0">
 				R<span x-text="maxPrice" class="showPriceRange">0</span>.00
 			</div>
 		</div>
@@ -67,14 +76,14 @@
 
 		<div class="addGarment">
 
-			<div  class="add button mt1">
+			<div class="add button mt1">
 				<!-- <a href="" button type="">Add garmet</a> -->
 				<button @click="">Add Garment</button>
 			</div>
 
 			<div class="add garment">
 				<h2>Add garment</h2>
-				<!-- <img src="/images/{{img}}" alt=""> -->
+				<img src="/images/{{img}}" alt="">
 
 				<form action="/garment/" method="post" class="addGarmentForm">
 
@@ -84,7 +93,7 @@
 					</div>
 					<div class="field">
 						<label for="">Image</label>
-						<input type="text" x-model="garmentList.image" name="img" class="img">
+						<input type="text" x-model="garmentList.img" name="img" class="img">
 					</div>
 					<div class="field">
 						<label for="">Price</label>
@@ -127,7 +136,7 @@
 				<div>
 					<div x-text="garment.description"></div>
 					<div x-text="garment.price"></div>
-					<img x-bind:src="`./images/${garment.img}`" alt="image">
+					<img x-bind:src="`/images/${garment.img}`" alt="image">
 				</div>
 
 			</template>
@@ -135,8 +144,6 @@
 
 	</div>
 
-	<!-- <script src="api.js"></script> -->
-	<!-- <script src="index.js"></script> -->
 	<script src="alpine.js"></script>
 
 </body>

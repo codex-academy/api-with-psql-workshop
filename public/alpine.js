@@ -7,13 +7,13 @@ document.addEventListener('alpine:init', () => {
 			garments: [],
 			genderFilter: '',
 			seasonFilter: '',
-			maxPrice:0,
-			garmentList:{
-				description:'',
-				image:'',
-				price:'',
-				season:'',
-				gender:''
+			maxPrice: 0,
+			garmentList: {
+				description: '',
+				img: '',
+				price: 0,
+				season: '',
+				gender: ''
 			},
 
 			init() {
@@ -39,13 +39,23 @@ document.addEventListener('alpine:init', () => {
 					.then(garmentsData => this.garments = garmentsData.data)
 			},
 
-			addGarment(){
+			addGarment() {
 				console.log(this.garmentList)
-				fetch(`/api/garments/`)
-				.then(r => r.json())
-				.then()
+				// console.log('/api/garment', this.garmentList);
+
+				try {
+					axios
+						.post('/api/garment', this.garmentList)
+						.then(()=>this.getGarments())
+						.catch(error => console.log(error))
+				} catch (error) {
+
+				}
+
+				// .then(r => r.json())
+				// .then(garmentsData => this.garments = garmentsData.data)
 			},
-			Show(){
+			Show() {
 
 			}
 		};
