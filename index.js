@@ -11,10 +11,15 @@
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static("public"))
-  const DATABASE_URL = process.env.DATABASE_URL//gary:gar123@localhost:5432/garment_app
 
+  const config = {
+    connectionString: process.env.DATABASE_URL ,
+    max: 30,
+    ssl:{ rejectUnauthorized : false}
+ };
+ 
   const pgp = PgPromise({});
-  const db = pgp(DATABASE_URL);
+  const db = pgp(config);
   API(app, db);
   
   
