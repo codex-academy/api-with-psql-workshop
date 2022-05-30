@@ -1,0 +1,102 @@
+body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(rgba(175, 168, 202, 0.8),rgba(155, 99, 116, 0.8)),url(./unnamed\ \(1\).png);
+}
+
+.container {
+    width: 70%;
+    margin:auto;
+	/* color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-image: linear-gradient(rgba(203, 104, 216, 0.8),rgba(247, 57, 114, 0.8)),url(./unnamed\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid black;
+    border-radius: 25px;
+    position: sticky;
+    top: 0;
+    border: 1px solid wheat;
+    color: black;
+    outline: none;
+    transition: .6s ease;
+    border-radius: 25px;
+}
+img {
+	display: inline-block;
+}
+
+.caption {
+	display: block;
+	text-align: center;
+}
+
+.garments {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.garment {
+	flex: 1;
+	background-color: beige;
+	border: 1px solid greenyellow;
+	padding: 1em;
+	margin: 0.25em;
+	border-radius: 0.5em;
+}
+
+.hidden {
+	display: none;
+}
+
+.field label {
+	display: block;
+	width: 5em;
+	margin-top: 0.5em;
+}
+
+.mt1 {
+	margin-top: 1em;
+}
+
+
+.message {
+	margin-top: 1em;
+	padding: 1em;
+	background-color: lightsalmon;
+}
+
+a {
+	color: black;
+	background-color: pink;
+	border: solid palevioletred;
+	border-radius: 10%;
+	padding: 0.5em;
+}
+
+.mt1 input {
+	color: solid black;
+	padding: 0.5em;
+	border: solid greenyellow;
+	border-radius: 25%;
+}
+
+.mt1 button {
+		width: 150px;
+		margin: auto;
+		height: 50px;
+		background-color:whitesmoke;
+		border: 1px solid wheat;
+		color: black;
+		outline: none;
+		transition: .6s ease;
+		border-radius: 25px	
+}
+.mt1 button:hover{
+	cursor: pointer;
+	background-color: rgb(241, 181, 233);
+	color: black;
+	box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+	font-weight: bold;
+}
